@@ -80,9 +80,7 @@ const storeTaskInLocalStorage = (task) => {
 }
 
 const loadTasks = () => {
-    const tasks = localStorageContent
-
-    tasks.forEach((task) => {
+    localStorageContent.forEach((task) => {
         createTask(task)
     })
 }
@@ -95,7 +93,7 @@ const updateLocalStorage = () => {
     localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
-themeToggleButton.addEventListener('click', (ev) => {
+themeToggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme')
 
     const theme = document.body.classList.contains('dark-theme')
